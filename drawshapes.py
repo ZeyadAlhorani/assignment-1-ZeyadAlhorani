@@ -1,6 +1,7 @@
 
 import turtle
 
+
 def draw_rectangle():
 
     XMAX =200
@@ -8,8 +9,22 @@ def draw_rectangle():
     YMAX =200
     YMIN =-YMAX
 
-length = 150
-width = 100
+
+shapeinput: str = input("choose either r for rectangle, c for circle, t for tringle")
+colorinput = input("red , navy , or green")
+length: float = input("put a length")
+width: float = input("put a width")
+
+if shapeinput == "r":
+    draw_rectangle()
+
+else: shapeinput: == "c":
+    radius: float = input("put a radius")
+    draw_circle()
+
+elif: shapeinput == "t":
+    draw_triangle()
+
 
 turtle.penup()
 turtle.goto(-200,-200)
@@ -24,7 +39,10 @@ turtle.pendown()
 turtle.begin_fill()
 turtle.fillcolor()
 
-def rectangle_will_fit():
+def draw_rectangle():
+    turtle.penup()
+    turtle.goto(180,50)
+    turtle.pendown()
     turtle.begin_fill()
     turtle.forward(length)
     turtle.right(90)
@@ -37,7 +55,28 @@ def rectangle_will_fit():
     turtle.fillcolor("red")
     turtle.end_fill()
 
-rectangle_will_fit()
+def draw_circle():
+    turtle.penup()
+    turtle.goto(-130,10)
+    turtle.pendown()
+    turtle.begin_fill()
+    turtle.circle(60)
+    turtle.fillcolor("navy")
+    turtle.end_fill()
 
+def draw_triangle():
+    turtle.penup()
+    turtle.goto(-150,100)
+    turtle.pendown()
+    turtle.begin_fill()
+    turtle.forward(100)
+    turtle.left(120)
+    turtle.forward(100)
+    turtle.left(120)
+    turtle.forward(100)
+    turtle.fillcolor("green")
+    turtle.end_fill()
 
-
+draw_triangle()
+draw_circle()
+draw_triangle()
